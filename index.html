@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Google Font Start  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Google Font End -->
+
+    <!-- DaisyUi CDN Start -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- DaisyUi CDN End -->
+
+    <style>
+        body {
+            font-family: "Lexend", sans-serif;
+            font-optical-sizing: auto;
+        }
+
+        header {
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            top: 0;
+            z-index: 1000;
+            position: sticky;
+            background-color: rgb(163, 144, 106);
+        }
+
+        header.sticky,
+        #button-section {
+            background-color: rgba(231, 223, 207, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        #button-section {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 1rem;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="sticky">
+
+        <section>
+            <div
+                class="flex items-center justify-around py-3 lg:py-5 flex-col lg:flex-row space-y-8 lg:space-y-0 lg:h-32 font-extrabold">
+                <div class="inline-block lg:mb-0">
+                    <button onclick="window.location.href='blog.html'"
+                        class="btn border-none px-5 text-sm lg:px-7 lg:text-base bg-lime-300"><a
+                            href="blog.html">Blog</a></button>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <img src="./assets/logo.png" alt="loading...">
+                    <p>Donate Bangladesh</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="./assets/coin.png" alt="loading....">
+                    <p id="main-balance">55500 BDT</p>
+                </div>
+            </div>
+        </section>
+
+    </header>
+    <main class="bg-white">
+
+        <!-- Donation & History Buttons Start -->
+        <section id="button-section">
+            <div class="flex flex-col lg:flex-row items-center gap-3 justify-center mt-8 lg:gap-8  lg:mt-16">
+                <button id="donation-btn" class="btn bg-lime-300 w-44 btn-xs lg:btn-lg">Donation</button>
+                <button id="history-btn" class="btn w-44 btn-xs sm:btn-sm md:btn-md lg:btn-lg">History</button>
+            </div>
+        </section>
+        <!-- Donation & History Buttons End -->
+
+        <!-- History Section Start-->
+
+        <section id="history-section" class="hidden my-6">
+        </section>
+
+        <!-- History Section End-->
+
+        <!-- Modal Section Start -->
+
+        <section id="modal-section" class="absolute hidden w-full">
+            <div class="bg-white border-4 w-3/12 m-auto text-center space-y-3 p-5 rounded-2xl">
+                <h1 class="font-extrabold text-3xl">Congrates!</h1>
+                <img class="inline pb-3" src="./assets/coin.png" alt="loading...">
+                <p>You Have Donated for Humankind</p>
+                <h4 class="font-extrabold text-lg pb-2">Successfully</h4>
+                <button id="close-btn" class="btn">Close Confirmation</button>
+            </div>
+        </section>
+
+        <!-- Modal Section End -->
+
+        <section id="donation-section">
+            <!-- First Card Start -->
+            <section>
+                <div class="flex gap-3 flex-col lg:flex-row items-center border-2 p-8 w-5/6 m-auto rounded-lg my-6">
+                    <div class="lg:w-[260rem] lg:h-[423px]">
+                        <img class="w-full h-full object-cover rounded-lg" src="./assets/noakhali.png" alt="loading...">
+                    </div>
+                    <div>
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center gap-1 bg-gray-200 p-1 rounded-md">
+                                <button><img src="./assets/coin.png" alt="loading..."></button>
+                                <p id="flood-balance-1">47657 BDT</p>
+                            </div>
+                            <h2 class="font-black text-2xl">Donate for Flood at Noakhali, Bangladesh</h2>
+                            <p>Noakhali, a coastal district in southeastern Bangladesh, is prone to flooding due to its
+                                geographical location and low-lying terrain. The district is crisscrossed by several
+                                rivers,
+                                such as the Meghna, which often overflow during the monsoon season, exacerbated by heavy
+                                rainfall and tidal surges from the Bay of Bengal. Flooding in Noakhali results in
+                                widespread
+                                inundation of farmlands, homes, and infrastructure, leading to displacement of
+                                residents,
+                                loss of crops, and disruption of livelihoods. The situation is often worsened by poor
+                                drainage systems and rising sea levels linked to climate change. During severe floods,
+                                emergency services struggle to provide aid, and many areas become isolated, further
+                                complicating relief efforts. Despite these challenges, the people of Noakhali show
+                                resilience, rebuilding their lives in the aftermath of frequent floods.</p>
+                            <input id="card-input-1" type="text" placeholder="Write Donation Amount"
+                                class="input input-bordered w-full" />
+                            <br>
+                            <button id="donation-btn-1" class="btn w-full bg-lime-300">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </section>
+            <!-- First Card End -->
+
+            <!-- Second Card Start -->
+            <section>
+                <div class="flex gap-3 flex-col lg:flex-row items-center border-2 p-8 w-5/6 m-auto rounded-lg my-6">
+                    <div class="lg:w-[250rem] lg:h-[400px]">
+                        <img class="w-full h-full object-cover rounded-lg" src="./assets/feni.png" alt="loading...">
+                    </div>
+                    <div>
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center gap-1 bg-gray-200 p-1 rounded-md">
+                                <button><img src="./assets/coin.png" alt="loading..."></button>
+                                <p id="flood-balance-2">47657 BDT</p>
+                            </div>
+                            <h2 class="font-black text-2xl">Donate for Flood Relief in Feni, Bangladesh</h2>
+                            <p>The Feni district, located in southeastern Bangladesh, is frequently affected by flooding
+                                due
+                                to its low-lying topography and monsoon rains. Heavy downpours, often exacerbated by the
+                                overflow of local rivers such as the Feni River, lead to widespread inundation,
+                                impacting
+                                both urban and rural areas. The flooding disrupts daily life, damaging homes,
+                                infrastructure, and agricultural lands, which are vital to the local economy. Displaced
+                                families face significant challenges, including loss of livelihoods and access to clean
+                                water and sanitation. Community resilience is tested as locals come together to assist
+                                one
+                                another in recovery efforts. Despite the recurrent nature of these floods, the people of
+                                Feni demonstrate remarkable strength and solidarity in rebuilding their lives and
+                                infrastructure in the aftermath.</p>
+                            <input id="card-input-2" type="text" placeholder="Write Donation Amount"
+                                class="input input-bordered w-full" />
+                            <br>
+                            <button id="donation-btn-2" class="btn w-full bg-lime-300">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </section>
+            <!-- Second Card End -->
+
+            <!-- Third Card Start -->
+            <section>
+                <div
+                    class="flex gap-3 flex-col lg:flex-row items-center border-2 p-8 w-5/6 m-auto rounded-lg mt-6 mb-56">
+                    <div class="lg:w-[240rem] lg:h-[400px]">
+                        <img class="w-full h-full object-cover rounded-lg" src="./assets/quota-protest.png"
+                            alt="loading...">
+                    </div>
+                    <div>
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center gap-1 bg-gray-200 p-1 rounded-md">
+                                <button><img src="./assets/coin.png" alt="loading..."></button>
+                                <p id="quota-balance">47657 BDT</p>
+                            </div>
+                            <h2 class="font-black text-2xl">Aid for Injured in the Quota Movement</h2>
+                            <p>The Quota Reform Movement, or "Quota Andolon," in Bangladesh began in 2018 as a protest
+                                against the public service quota system. Many students and job seekers argued that the
+                                existing quotas, which reserved positions for specific groups like freedom fighters’
+                                children and women, were being misused, leading to unfair advantages.Protests erupted
+                                across
+                                universities, with activists demanding a reduction in quotas and a shift toward
+                                merit-based
+                                recruitment. The movement brought attention to issues of social equity and access to
+                                opportunities in the job market. Although the government has made some adjustments to
+                                the
+                                quota system, the Quota Andolon continues to raise important discussions about fairness
+                                and
+                                transparency in recruitment practices in Bangladesh.</p>
+                            <input id="card-input-3" type="text" placeholder="Write Donation Amount"
+                                class="input input-bordered w-full" />
+                            <br>
+                            <button id="donation-btn-3" class="btn w-full bg-lime-300">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </section>
+            <!-- Third Card End -->
+        </section>
+    </main>
+    <footer>
+        <div class="bg-orange-100 fixed bottom-0 left-0 right-0 -z-10 mt-52">
+            <p class="h-32"></p>
+        </div>
+    </footer>
+    <script src="./js/history.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/button.js"></script>
+    <script src="./js/modal.js"></script>
+</body>
+
+</html>
